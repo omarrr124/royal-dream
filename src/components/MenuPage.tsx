@@ -68,7 +68,7 @@ export const MenuPage: React.FC<MenuPageProps> = ({
     <div className="relative min-h-screen w-full bg-[#faebd7] text-[#0d0d0d] font-sans selection:bg-[#0d0d0d]/10 selection:text-[#0d0d0d]">
       {/* Seamless Geometric Pattern Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-20 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
+        className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-repeat bg-[length:320px_auto]"
         style={{ backgroundImage: "url('/menu_pattern.jpg')" }}
       />
 

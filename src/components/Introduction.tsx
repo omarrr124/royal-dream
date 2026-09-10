@@ -50,7 +50,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onOpenAbout }) => {
     >
       {/* Seamless Geometric Pattern Background Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-20 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
+        className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-repeat bg-[length:320px_auto]"
         style={{ backgroundImage: "url('/menu_pattern.jpg')" }}
       />
 

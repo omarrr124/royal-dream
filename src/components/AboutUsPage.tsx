@@ -241,8 +241,8 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
               initial={{ opacity: 0, y: '-100%' }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: '-100%' }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-0 z-40 bg-[#0d0d0d]/98 backdrop-blur-xl flex flex-col justify-between p-8 pt-24 lg:hidden"
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed inset-0 z-40 bg-[#0d0d0d]/98 flex flex-col justify-between p-8 pt-24 lg:hidden"
             >
               <div className="flex flex-col space-y-6 text-center my-auto">
                 <div className="flex justify-center mb-4">
@@ -263,7 +263,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
                     }}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.08 + index * 0.06 }}
+                    transition={{ delay: 0.05 + index * 0.05 }}
                     className={`font-sans text-xl font-bold uppercase tracking-tight cursor-pointer ${
                       item.label === 'ABOUT US' ? 'text-[#faebd7]' : 'text-[#faebd7]/70 hover:opacity-75'
                     }`}
@@ -294,7 +294,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="font-['Six_Caps'] uppercase text-[#faebd7] tracking-tight select-none leading-none drop-shadow-2xl"
+            className="font-['Six_Caps'] uppercase text-[#faebd7] tracking-tight select-none leading-none transform-gpu"
             style={{ fontSize: 'clamp(110px, 18vw, 240px)', lineHeight: 0.95 }}
           >
             ABOUT US
@@ -310,7 +310,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pt-16 sm:pt-24 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 text-center overflow-x-hidden touch-pan-y">
         {/* Seamless Geometric Pattern Overlay */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-15 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
+          className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-repeat bg-[length:320px_auto]"
           style={{ backgroundImage: "url('/menu_pattern.jpg')" }}
         />
 
@@ -321,7 +321,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full flex items-center justify-center text-center"
+            className="w-full flex items-center justify-center text-center transform-gpu"
           >
             <h2
               className="font-['Six_Caps'] uppercase text-[#0d0d0d] tracking-tight leading-none select-none"
@@ -342,7 +342,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 overflow-x-hidden touch-pan-y">
         {/* Pattern Overlay */}
         <div
-          className="absolute inset-0 pointer-events-none z-0 opacity-15 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
+          className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-repeat bg-[length:320px_auto]"
           style={{ backgroundImage: "url('/menu_pattern.jpg')" }}
         />
 

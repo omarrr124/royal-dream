@@ -242,9 +242,9 @@ export const SignatureBites: React.FC = () => {
 
   return (
     <section id="chef-selection" className="relative w-full bg-[#faebd7] text-[#0d0d0d] pb-16 md:pb-24">
-      {/* Seamless Fixed Geometric Pattern Overlay */}
+      {/* Seamless Geometric Pattern Overlay */}
       <div
-        className="absolute inset-0 pointer-events-none z-0 opacity-20 mix-blend-multiply bg-repeat bg-[length:320px_auto] bg-fixed"
+        className="absolute inset-0 pointer-events-none z-0 opacity-10 bg-repeat bg-[length:320px_auto]"
         style={{ backgroundImage: "url('/menu_pattern.jpg')" }}
       />
 
