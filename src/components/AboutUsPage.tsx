@@ -154,13 +154,13 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
   };
 
   return (
-    <div className="relative min-h-screen w-full bg-[#0d0d0d] text-[#faebd7] font-sans antialiased overflow-x-hidden selection:bg-[#faebd7]/20 selection:text-[#faebd7]">
+    <div className="relative min-h-screen w-full bg-[#0d0d0d] text-[#faebd7] font-sans antialiased overflow-x-hidden touch-pan-y selection:bg-[#faebd7]/20 selection:text-[#faebd7]">
       {/* -------------------------------------------------------------
           1. HERO SECTION WITH SUPABASE "aboutt us.jpg" PHOTO BACKGROUND
           Height: 2/3 of the page (66.66vh height)
           Title: 'ABOUT US' in 'Six Caps', uppercase (clamp(110px, 18vw, 240px))
       ------------------------------------------------------------- */}
-      <section className="relative w-full h-[66.666vh] min-h-[520px] flex flex-col justify-between bg-[#0d0d0d] text-[#faebd7] overflow-hidden border-b border-[#faebd7]/10">
+      <section className="relative w-full h-[66.666vh] min-h-[520px] flex flex-col justify-between bg-[#0d0d0d] text-[#faebd7] overflow-x-hidden touch-pan-y border-b border-[#faebd7]/10">
         {/* Background Image "aboutt us.jpg" from Supabase */}
         <div className="absolute inset-0 z-0">
           <img
@@ -307,7 +307,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           Background: Warm antique cream #faebd7 (text #0d0d0d)
           Subtitle: 'OUR STORY' in 'Six Caps' - AS BIG AS ABOUT US (clamp(110px, 18vw, 240px))
       ------------------------------------------------------------- */}
-      <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pt-16 sm:pt-24 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 text-center overflow-hidden">
+      <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pt-16 sm:pt-24 pb-10 sm:pb-14 px-4 sm:px-8 lg:px-12 text-center overflow-x-hidden touch-pan-y">
         {/* Seamless Geometric Pattern Overlay */}
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-15 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
@@ -339,7 +339,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           Photos: story 1.jpg, story 2.jpg, story 3.jpg, story 4.jpg from Supabase
           Zig-zag layout on desktop, single column fallback on mobile (<810px)
       ------------------------------------------------------------- */}
-      <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 overflow-hidden">
+      <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pb-20 sm:pb-28 px-4 sm:px-8 lg:px-12 overflow-x-hidden touch-pan-y">
         {/* Pattern Overlay */}
         <div
           className="absolute inset-0 pointer-events-none z-0 opacity-15 mix-blend-multiply bg-repeat bg-[length:320px_auto]"
@@ -412,7 +412,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           Title: 'MEET THE TEAM' in 'Six Caps'
           Interactive Team Showcase component with hover photo filter & social links
       ------------------------------------------------------------- */}
-      <section className="relative w-full bg-[#0d0d0d] text-[#faebd7] py-16 sm:py-24 px-4 sm:px-8 lg:px-12 border-t border-[#faebd7]/10">
+      <section className="relative w-full bg-[#0d0d0d] text-[#faebd7] py-16 sm:py-24 px-4 sm:px-8 lg:px-12 border-t border-[#faebd7]/10 touch-pan-y">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-10 sm:mb-14">

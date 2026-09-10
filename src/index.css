@@ -132,6 +132,12 @@
 }
 
 @media (max-width: 809px) {
+  html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
   .timeline-item {
     display: flex;
     flex-direction: column !important;
