@@ -307,7 +307,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="font-['Six_Caps'] uppercase text-[#faebd7] tracking-tight select-none leading-none drop-shadow-2xl"
-            style={{ fontSize: 'clamp(52px, 14vw, 240px)', lineHeight: 0.95 }}
+            style={{ fontSize: 'clamp(64px, 18vw, 240px)', lineHeight: 0.95 }}
           >
             ABOUT US
           </motion.h1>
@@ -317,7 +317,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
       {/* -------------------------------------------------------------
           2. OUR STORY SECTION (Cream Theme)
           Background: Warm antique cream #faebd7 (text #0d0d0d)
-          Subtitle: 'OUR STORY' in 'Six Caps' - AS BIG AS ABOUT US (clamp(52px, 14vw, 240px))
+          Subtitle: 'OUR STORY' in 'Six Caps' - AS BIG AS ABOUT US (clamp(64px, 18vw, 240px))
       ------------------------------------------------------------- */}
       <section className="relative w-full bg-[#faebd7] text-[#0d0d0d] pt-12 sm:pt-24 pb-8 sm:pb-14 px-4 sm:px-8 lg:px-12 text-center overflow-hidden">
         {/* Seamless Geometric Pattern Overlay */}
@@ -337,7 +337,7 @@ export const AboutUsPage: React.FC<AboutUsPageProps> = ({
           >
             <h2
               className="font-['Six_Caps'] uppercase text-[#0d0d0d] tracking-tight leading-none select-none"
-              style={{ fontSize: 'clamp(52px, 14vw, 240px)', lineHeight: 0.95 }}
+              style={{ fontSize: 'clamp(64px, 18vw, 240px)', lineHeight: 0.95 }}
             >
               OUR STORY
             </h2>

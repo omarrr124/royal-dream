@@ -80,7 +80,7 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS }: TeamShowcase
   return (
     <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16 select-none w-full max-w-4xl mx-auto py-8 px-4 md:px-6 font-sans">
       {/* ── Left: photo grid (Centered unit) ── */}
-      <div className="flex gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0 overflow-x-auto touch-pan-y max-w-full pb-1 md:pb-0 mx-auto md:mx-0 justify-center items-center">
+      <div className="flex gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0 overflow-x-auto md:overflow-visible touch-pan-y max-w-full pb-1 md:pb-0 mx-auto md:mx-0 justify-center items-center">
         {/* Column 1 */}
         <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-3">
           {col1.map((member) => (
