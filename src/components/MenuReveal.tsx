@@ -62,7 +62,7 @@ export const MenuReveal: React.FC<MenuRevealProps> = ({ onOpenMenu }) => {
     <section
       ref={trackRef}
       id="speakeasy"
-      className="speakeasy-track relative w-full bg-[#0d0d0d] min-[810px]:h-[160vh] max-[809px]:h-auto max-[809px]:py-20"
+      className="speakeasy-track relative w-full bg-[#0d0d0d] min-[810px]:h-[320vh] max-[809px]:h-auto max-[809px]:py-20"
     >
       {/* 1. Mobile-Only Background Image Fallback (<810px) */}
       <div className="min-[810px]:hidden absolute inset-0 z-0 overflow-hidden">

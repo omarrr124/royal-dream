@@ -36,11 +36,6 @@
     color-scheme: dark;
   }
 
-  html, body {
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-
   body {
     background-color: var(--color-noir);
     color: var(--color-cream);
