@@ -105,8 +105,8 @@ const BurgerCardItem: React.FC<BurgerCardItemProps> = ({ card, index, totalCards
     <div
       ref={containerRef}
       style={{ zIndex: index + 1 }}
-      className={`sticky top-0 min-[1200px]:top-[80px] max-[1199px]:relative max-[1199px]:top-auto w-full max-w-[920px] mx-auto burger-card-wrapper ${
-        isLast ? 'mb-8 min-[1200px]:mb-12' : 'mb-8 min-[1200px]:mb-[22vh]'
+      className={`sticky top-[60px] sm:top-[80px] w-full max-w-[920px] mx-auto burger-card-wrapper ${
+        isLast ? 'mb-8 sm:mb-12' : 'mb-12 sm:mb-[16vh]'
       }`}
     >
       <motion.div
