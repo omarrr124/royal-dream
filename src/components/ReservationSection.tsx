@@ -225,54 +225,16 @@ export const ReservationSection: React.FC = () => {
             for you.
           </p>
 
-          {/* Action Buttons: Web Reservation + WhatsApp VIP */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <button
-              onClick={() => setIsModalOpen(true)}
-              className="group inline-flex items-center justify-center gap-1.5 px-7 py-3 rounded-full border border-[#faebd7] text-[#faebd7] font-sans text-[11px] sm:text-[12px] font-bold uppercase tracking-wider transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#faebd7] hover:text-[#0d0d0d] hover:scale-105 active:scale-95 shadow-xl focus:outline-none cursor-pointer"
-            >
-              <span>MAKE THE RESERVATION</span>
-              <span className="inline-block max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out group-hover:max-w-[35px] group-hover:opacity-100 group-hover:ml-1 text-sm">
-                ⏲
-              </span>
-            </button>
-
-            <a
-              href="https://wa.me/60123456789?text=Hello%20Royal%20Dream,%20I%20would%20like%20to%20reserve%20a%20VIP%20table"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-[#25D366] text-[#25D366] bg-[#25D366]/10 hover:bg-[#25D366] hover:text-[#0d0d0d] font-sans text-[11px] sm:text-[12px] font-bold uppercase tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 shadow-xl cursor-pointer"
-            >
-              <span>INSTANT WHATSAPP VIP</span>
-            </a>
-          </div>
-
-          {/* Upfront Guest Information & Logistics Bar */}
-          <div className="w-full max-w-3xl pt-6 border-t border-[#faebd7]/15 mt-6 grid grid-cols-2 md:grid-cols-4 gap-3 text-center">
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#faebd7]/5 border border-[#faebd7]/10">
-              <span className="text-base sm:text-lg mb-1">🚗</span>
-              <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#faebd7]">VALET PARKING</span>
-              <span className="font-sans text-[9px] text-[#faebd7]/70 uppercase">AT ENTRANCE</span>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#faebd7]/5 border border-[#faebd7]/10">
-              <span className="text-base sm:text-lg mb-1">🥩</span>
-              <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#faebd7]">100% HALAL</span>
-              <span className="font-sans text-[9px] text-[#faebd7]/70 uppercase">WOOD-FIRED GRILL</span>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#faebd7]/5 border border-[#faebd7]/10">
-              <span className="text-base sm:text-lg mb-1">👔</span>
-              <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#faebd7]">DRESS CODE</span>
-              <span className="font-sans text-[9px] text-[#faebd7]/70 uppercase">SMART CASUAL</span>
-            </div>
-
-            <div className="flex flex-col items-center justify-center p-2.5 rounded-xl bg-[#faebd7]/5 border border-[#faebd7]/10">
-              <span className="text-base sm:text-lg mb-1">📍</span>
-              <span className="font-sans text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#faebd7]">BUKIT BINTANG</span>
-              <span className="font-sans text-[9px] text-[#faebd7]/70 uppercase">KUALA LUMPUR</span>
-            </div>
-          </div>
+          {/* Action Button */}
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="group inline-flex items-center justify-center gap-1.5 px-7 py-2.5 rounded-full border border-[#faebd7] text-[#faebd7] font-sans text-[11px] sm:text-[12px] font-bold uppercase tracking-wider transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:bg-[#faebd7] hover:text-[#0d0d0d] hover:scale-105 active:scale-95 shadow-xl focus:outline-none cursor-pointer"
+          >
+            <span>MAKE THE RESERVATION</span>
+            <span className="inline-block max-w-0 opacity-0 overflow-hidden whitespace-nowrap transition-all duration-300 ease-out group-hover:max-w-[35px] group-hover:opacity-100 group-hover:ml-1 group-active:max-w-[35px] group-active:opacity-100 text-sm">
+              ⏲
+            </span>
+          </button>
         </div>
       </div>
 

@@ -204,19 +204,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenMenu, onOpenAbout, onNavigateS
           {/* Brand Title Graphic - Scaled for 80% visual target at 100% zoom */}
           <motion.div
             variants={fadeIn('up')}
-            className="w-full flex flex-col items-center justify-center py-1"
+            className="w-full flex items-center justify-center py-1"
           >
             <img
               src="/name_exact_transparent.png"
               alt="Royal Dream Restaurant - رويال دريم"
               className="w-full max-w-[380px] sm:max-w-[460px] md:max-w-[530px] lg:max-w-[580px] h-auto object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)]"
             />
-            <motion.p
-              variants={fadeIn('up')}
-              className="font-sans text-[11px] sm:text-xs md:text-sm uppercase font-bold tracking-[0.25em] text-[#faebd7]/95 drop-shadow-lg mt-3"
-            >
-              FINE DINING ARABIC CUISINE • BUKIT BINTANG, KUALA LUMPUR
-            </motion.p>
           </motion.div>
         </motion.div>
       </Container>

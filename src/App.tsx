@@ -104,24 +104,6 @@ export const App: React.FC = () => {
         {/* 6. Site Footer ("GET IN TOUCH") */}
         <Footer />
       </main>
-
-      {/* Persistent Mobile Floating Reserve & VIP WhatsApp Bar */}
-      <div className="fixed bottom-0 inset-x-0 z-50 lg:hidden bg-[#0d0d0d]/95 backdrop-blur-md border-t border-[#faebd7]/20 p-2.5 px-4 flex items-center justify-between gap-3 shadow-2xl">
-        <button
-          onClick={handleBookTable}
-          className="flex-1 py-3 px-4 rounded-full bg-[#faebd7] text-[#0d0d0d] font-sans text-xs font-black uppercase tracking-wider text-center shadow-lg active:scale-95 transition-transform cursor-pointer"
-        >
-          BOOK A TABLE
-        </button>
-        <a
-          href="https://wa.me/60123456789?text=Hello%20Royal%20Dream,%20I%20would%20like%20to%20reserve%20a%20VIP%20table"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="py-3 px-4 rounded-full border border-[#25D366] text-[#25D366] bg-[#25D366]/10 font-sans text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-1.5 active:scale-95 transition-transform cursor-pointer"
-        >
-          <span>WHATSAPP VIP</span>
-        </a>
-      </div>
     </div>
   );
 };
