@@ -26,13 +26,20 @@ export const MenuPage: React.FC<MenuPageProps> = ({
   onNavigateSection,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-  const [openCategoryIds, setOpenCategoryIds] = useState<string[]>([]);
+  const [openCategoryIds, setOpenCategoryIds] = useState<string[]>(
+    MENU_CATEGORIES.map((cat) => cat.id)
+  );
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const toggleCategory = (catId: string) => {
     setOpenCategoryIds((prev) =>
       prev.includes(catId) ? prev.filter((id) => id !== catId) : [...prev, catId]
     );
   };
+
+  const expandAll = () => setOpenCategoryIds(MENU_CATEGORIES.map((c) => c.id));
+  const collapseAll = () => setOpenCategoryIds([]);
 
   const handleNavClick = (href: string, label: string) => {
     setMobileMenuOpen(false);
@@ -194,9 +201,9 @@ export const MenuPage: React.FC<MenuPageProps> = ({
       </AnimatePresence>
 
       {/* 2. VERTICAL SCROLLABLE CATEGORY SECTIONS WITH EDITORIAL LIST DROPDOWNS */}
-      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12 sm:space-y-16">
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 sm:space-y-12">
         {/* Top Section Title */}
-        <div className="text-center space-y-3 pt-4 pb-4 sm:pb-6 mb-6 sm:mb-8">
+        <div className="text-center space-y-3 pt-4 pb-2">
           <span className="font-sans text-xs sm:text-sm font-extrabold text-[#96722e] tracking-[0.25em] uppercase">
             ROYAL CULINARY SELECTION
           </span>
@@ -208,10 +215,87 @@ export const MenuPage: React.FC<MenuPageProps> = ({
           </p>
         </div>
 
+        {/* Live Search & Filter Bar */}
+        <div className="max-w-4xl mx-auto space-y-4 bg-[#fdfbf7] p-4 sm:p-6 border border-[#c5a880]/30 rounded-2xl shadow-sm">
+          {/* Search Input */}
+          <div className="relative w-full">
+            <input
+              type="text"
+              placeholder="Search dishes or ingredients (e.g. Lamb, Shish, Hummus)..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full bg-[#faebd7] text-[#0d0d0d] placeholder-[#0d0d0d]/50 border border-[#96722e]/30 rounded-xl px-4 py-3 text-xs sm:text-sm font-sans focus:outline-none focus:ring-2 focus:ring-[#96722e]"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-[#0d0d0d]/60 hover:text-[#0d0d0d] text-xs uppercase font-bold"
+              >
+                Clear
+              </button>
+            )}
+          </div>
+
+          {/* Quick Category Filter Chips + Expand/Collapse All */}
+          <div className="flex flex-wrap items-center justify-between gap-2 pt-1">
+            <div className="flex flex-wrap items-center gap-2">
+              {[
+                { id: 'all', label: 'ALL DISHES' },
+                { id: 'grills', label: 'GRILLS' },
+                { id: 'mains', label: 'MAINS & RICE' },
+                { id: 'starters', label: 'STARTERS' },
+                { id: 'desserts', label: 'DESSERTS & DRINKS' },
+              ].map((chip) => (
+                <button
+                  key={chip.id}
+                  onClick={() => setActiveFilter(chip.id)}
+                  className={cn(
+                    'px-3.5 py-1.5 rounded-full text-[10px] sm:text-xs font-extrabold uppercase tracking-wider transition-all cursor-pointer',
+                    activeFilter === chip.id
+                      ? 'bg-[#0d0d0d] text-[#faebd7] shadow'
+                      : 'bg-[#faebd7] text-[#0d0d0d]/80 hover:bg-[#0d0d0d]/10'
+                  )}
+                >
+                  {chip.label}
+                </button>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-2 text-[10px] sm:text-xs font-bold text-[#96722e] uppercase tracking-wider">
+              <button onClick={expandAll} className="hover:underline cursor-pointer">
+                Expand All
+              </button>
+              <span>•</span>
+              <button onClick={collapseAll} className="hover:underline cursor-pointer">
+                Collapse All
+              </button>
+            </div>
+          </div>
+        </div>
+
         {MENU_CATEGORIES.map((category: MenuCategory) => {
-          const categoryItems = MENU_ITEMS.filter(
+          let categoryItems = MENU_ITEMS.filter(
             (item) => item.category === category.id
           );
+
+          if (activeFilter !== 'all') {
+            const catId = category.id.toLowerCase();
+            const catLabel = category.label.toLowerCase();
+            if (activeFilter === 'grills' && !catId.includes('grill') && !catLabel.includes('grill')) return null;
+            if (activeFilter === 'mains' && !catId.includes('main') && !catId.includes('rice') && !catLabel.includes('main')) return null;
+            if (activeFilter === 'starters' && !catId.includes('starter') && !catId.includes('cold') && !catId.includes('hot') && !catLabel.includes('starter')) return null;
+            if (activeFilter === 'desserts' && !catId.includes('dessert') && !catId.includes('drink') && !catId.includes('beverage') && !catLabel.includes('drink')) return null;
+          }
+
+          if (searchQuery.trim()) {
+            const q = searchQuery.toLowerCase();
+            categoryItems = categoryItems.filter(
+              (item) =>
+                item.name.toLowerCase().includes(q) ||
+                item.arabicName.includes(q) ||
+                item.description.toLowerCase().includes(q)
+            );
+          }
 
           if (categoryItems.length === 0) return null;
 
